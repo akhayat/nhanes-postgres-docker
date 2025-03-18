@@ -12,3 +12,5 @@ RUN sed -i 's/peer/trust/g' /etc/postgresql/16/main/pg_hba.conf \
 EXPOSE 8787
 EXPOSE 2200
 EXPOSE 5432
+
+STOPSIGNAL SIGTERM
