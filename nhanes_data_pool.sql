@@ -40,3 +40,5 @@ ALTER TABLE "Metadata"."QuestionnaireVariables" ADD COLUMN "VariableTSV" TSVECTO
 
 UPDATE "Metadata"."QuestionnaireVariables" SET "VariableTSV" = to_tsvector(concat("Variable", ' ', "TableName", ' ', "SasLabel", ' ', "Description"));
 
+CREATE INDEX "VariableIndx" ON "Metadata"."QuestionnaireVariables" USING GIN ("VariableTSV");
+
